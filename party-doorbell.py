@@ -9,6 +9,8 @@ tn.open(HOST,PORT)      # Connect to the fhem server on this machine
 
 tn.write("inform on\n") # fhem's command to spit out the data it gets
 
+entranceSoundFile = None
+
 while True:
 	output = tn.read_until("\n") # When there's a carriage return from telnet, store the line that came in
 	if "channel" in output:      # For any button press, process it:
